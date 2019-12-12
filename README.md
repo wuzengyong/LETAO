@@ -1,4 +1,5 @@
 乐淘电商
+
 移动端
 Mui介绍
 Mui 是一个ui框架 针对移动端开发的ui框架 只能适配移动端（流式布局）
@@ -7,68 +8,30 @@ Mui 是一个ui框架 针对移动端开发的ui框架 只能适配移动端（�
 搭建页面主体架子
 具体到页面功能： 1.顶部通栏 2.轮播图 3.导航栏 4.运动生活专区 5.底部页签
 
-页面架子
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
-    <title>乐淘首页</title>
-    <link rel="stylesheet" href="assets/mui/css/mui.css"/>
-    <link rel="stylesheet" href="css/common.css"/>
-</head>
-<body>
-    <div class="lt_container">
-        <header class="lt_topBar"></header>
-        <div class="lt_content">
-            1
-        </div>
-        <footer class="lt_tabBar"></footer>
-    </div>
-<script src="assets/mui/js/mui.js"></script>
-</body>
-</html>
-初始区域滚动插件
-    /*初始化区域滚动组件 当超过了父容器大小的时候生效*/
-    mui('.mui-scroll-wrapper').scroll();
-初始化轮播图
-    /*轮播图的初始化*/
-    mui('.mui-slider').slider({
-        interval:4000
-    });
-分类页
-静态页面
-左侧边栏 里面的信息内容是 一级分类
+一.分类页
+1. 静态页面
+   左侧边栏 里面的信息内容是 一级分类
+   右侧内容 里面的信息比尔是 二级分类
+2.渲染动态
+  左侧分类 需要获取一级分类数据 渲染在页面当中
+  默认选中一个分类 加载出第一个分类对应的数据 渲染二级分类（右侧内容）
+  点击一级分类的时候 需要去加载对应的分类数据 渲染二级分类（右侧内容）
 
-右侧内容 里面的信息比尔是 二级分类
 
-/*初始左侧滚动*/
-mui('.lt_cateLeft').scroll();
-/*初始右侧滚动*/
-mui('.lt_cateRight').scroll();
-渲染动态
-左侧分类 需要获取一级分类数据 渲染在页面当中
-默认选中一个分类 加载出第一个分类对应的数据 渲染二级分类（右侧内容）
-点击一级分类的时候 需要去加载对应的分类数据 渲染二级分类（右侧内容）
-图片如果加载不成功显示默认图片 onerror="失败的时候去替换原来错误的地址 为默认图片的地址" onerror="this.src = 'images/none.jpg' "
+二.搜索页
+1.静态页面
+  搜索表单 包含了搜索框和按钮
+  历史搜索 两种情况
+  没有历史记录的情况 显示没有搜索历史记录 有历史记录的情况 显示 历史记录 清空操作 历史列表
 
-搜索页
-静态页面
-
-搜索表单 包含了搜索框和按钮
-
-历史搜索 两种情况
-没有历史记录的情况 显示没有搜索历史记录 有历史记录的情况 显示 历史记录 清空操作 历史列表
-
-动态渲染
-
+2.动态渲染
 输入搜索关键字 点击搜索 跳转搜索列表页 （把关键字传递给搜索列表页 同时记录这一次的搜索记录）
 需要页面初始化的时候 渲染上一次的搜索记录 （获取本地存储的数据 转换成js可以使用的数据 进行渲染）
 点击搜索记录对应的删除按钮 删除当前对应的历史记录 （获取本机的记录删除一条从新记录到本地存储当中）
 点击情况历史记录 情况所有记录 （把本来存储的数据清空）
 需求 记录10数据 如果超过加一条 删一条 如果有一样的删除 记录新的
 
-搜索列表页
+三.搜索列表页
 静态页面
 
 搜索表单
@@ -157,29 +120,4 @@ mui('.lt_cateRight').scroll();
 删除购物车当中的商品
 修改购物车当中的商品 商品的数量和商品的尺码
 计算订单总金额 购物车操作后
-后台管理端
-目录结构：后台的目录全部在admin目录下面
 
-页面基本模板
-
-```
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>后台管理系统-登录</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/admin.css"/>
-</head>
-<body>
-
-
-<script src="assets/jquery/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="js/admin.js"></script>
-</body>
-</html>
-
-```
-登录
-静态的页面
